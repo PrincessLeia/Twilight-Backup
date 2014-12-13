@@ -1,0 +1,11 @@
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Jax\TAC_Jax\bin\x86\Debug\TAC_Jax.exe.config
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Jax\TAC_Jax\bin\x86\Debug\TAC_Jax.exe
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Jax\TAC_Jax\bin\x86\Debug\TAC_Jax.pdb
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Jax\TAC_Jax\bin\x86\Debug\LeagueSharp.Common.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Jax\TAC_Jax\bin\x86\Debug\LeagueSharp.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Jax\TAC_Jax\bin\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Jax\TAC_Jax\bin\x86\Debug\SharpDX.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Jax\TAC_Jax\bin\x86\Debug\LeagueSharp.xml
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Jax\TAC_Jax\obj\x86\Debug\TAC_Jax.exe
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Jax\TAC_Jax\obj\x86\Debug\TAC_Jax.pdb
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Jax\TAC_Jax\obj\x86\Debug\TAC_Jax.csprojResolveAssemblyReference.cache

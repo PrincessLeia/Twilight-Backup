@@ -1,0 +1,15 @@
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\TAC Kalista.exe.config
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\TAC Kalista.exe
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\TAC Kalista.pdb
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\LeagueSharp.Common.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\LeagueSharp.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\SharpDX.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\SharpDX.Toolkit.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\SharpDX.Toolkit.Graphics.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\LeagueSharp.xml
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\SharpDX.Toolkit.xml
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\bin\x86\Debug\SharpDX.Toolkit.Graphics.xml
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\obj\x86\Debug\TAC Kalista.csprojResolveAssemblyReference.cache
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\obj\x86\Debug\TAC Kalista.exe
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Kalista\TAC Kalista\obj\x86\Debug\TAC Kalista.pdb

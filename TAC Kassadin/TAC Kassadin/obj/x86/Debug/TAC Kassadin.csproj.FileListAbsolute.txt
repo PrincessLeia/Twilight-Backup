@@ -1,0 +1,11 @@
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC Kassadin\TAC Kassadin\bin\x86\Debug\TAC Kassadin.exe.config
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC Kassadin\TAC Kassadin\bin\x86\Debug\TAC Kassadin.exe
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC Kassadin\TAC Kassadin\bin\x86\Debug\TAC Kassadin.pdb
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC Kassadin\TAC Kassadin\bin\x86\Debug\LeagueSharp.Common.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC Kassadin\TAC Kassadin\bin\x86\Debug\LeagueSharp.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC Kassadin\TAC Kassadin\bin\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC Kassadin\TAC Kassadin\bin\x86\Debug\SharpDX.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC Kassadin\TAC Kassadin\bin\x86\Debug\LeagueSharp.xml
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC Kassadin\TAC Kassadin\obj\x86\Debug\TAC Kassadin.csprojResolveAssemblyReference.cache
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC Kassadin\TAC Kassadin\obj\x86\Debug\TAC Kassadin.exe
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC Kassadin\TAC Kassadin\obj\x86\Debug\TAC Kassadin.pdb

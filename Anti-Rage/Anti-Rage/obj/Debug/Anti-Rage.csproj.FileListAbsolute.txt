@@ -1,0 +1,2 @@
+c:\users\harold\documents\visual studio 2013\Projects\Anti-Rage\Anti-Rage\bin\Debug\Anti-Rage.exe.config
+C:\Users\Harold\documents\visual studio 2013\Projects\Anti-Rage\Anti-Rage\bin\Release\Anti-Rage.exe.config

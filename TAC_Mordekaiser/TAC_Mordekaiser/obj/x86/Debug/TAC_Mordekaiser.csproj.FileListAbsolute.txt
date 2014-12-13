@@ -1,0 +1,12 @@
+C:\Users\Harold\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\bin\x86\Debug\TAC_Mordekaiser.exe.config
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\bin\x86\Debug\TAC_Mordekaiser.exe.config
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\bin\x86\Debug\TAC_Mordekaiser.exe
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\bin\x86\Debug\TAC_Mordekaiser.pdb
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\bin\x86\Debug\LeagueSharp.Common.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\bin\x86\Debug\LeagueSharp.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\bin\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\bin\x86\Debug\SharpDX.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\bin\x86\Debug\LeagueSharp.xml
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\obj\x86\Debug\TAC_Mordekaiser.csprojResolveAssemblyReference.cache
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\obj\x86\Debug\TAC_Mordekaiser.exe
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TAC_Mordekaiser\TAC_Mordekaiser\obj\x86\Debug\TAC_Mordekaiser.pdb

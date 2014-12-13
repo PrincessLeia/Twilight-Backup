@@ -1,0 +1,23 @@
+C:\Users\Harold\documents\visual studio 2013\Projects\Anti-Rage\Anti-Rage\bin\x86\Release\Anti-Rage.exe.config
+C:\Users\Harold\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\Anti-Rage.exe.config
+C:\Users\Harold\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\obj\x86\Release\Anti-Rage.csprojResolveAssemblyReference.cache
+C:\Users\Harold\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\Anti-Rage.exe
+C:\Users\Harold\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\Anti-Rage.pdb
+C:\Users\Harold\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\LeagueSharp.Common.dll
+C:\Users\Harold\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\LeagueSharp.dll
+C:\Users\Harold\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\SharpDX.dll
+C:\Users\Harold\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\SharpDX.Direct3D9.dll
+C:\Users\Harold\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\LeagueSharp.xml
+C:\Users\Harold\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\obj\x86\Release\Anti-Rage.exe
+C:\Users\Harold\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\obj\x86\Release\Anti-Rage.pdb
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\Anti-Rage.exe.config
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\obj\x86\Release\Anti-Rage.pdb
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\Anti-Rage.exe
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\Anti-Rage.pdb
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\LeagueSharp.Common.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\LeagueSharp.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\SharpDX.Direct3D9.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\SharpDX.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\bin\x86\Release\LeagueSharp.xml
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\obj\x86\Release\Anti-Rage.csprojResolveAssemblyReference.cache
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\Anti-Rage\Anti-Rage\obj\x86\Release\Anti-Rage.exe
