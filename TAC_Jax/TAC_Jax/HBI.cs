@@ -11,19 +11,19 @@ namespace TAC_Jax
     class HpBarIndicator
     {
 
-        public static SharpDX.Direct3D9.Device dxDevice = Drawing.Direct3DDevice;
-        public static SharpDX.Direct3D9.Line dxLine;
+        public static SharpDX.Direct3D9.Device DxDevice = Drawing.Direct3DDevice;
+        public static SharpDX.Direct3D9.Line DxLine;
 
-        public Obj_AI_Hero unit { get; set; }
+        public Obj_AI_Hero Unit { get; set; }
 
-        public float width = 104;
+        public float Width = 104;
 
-        public float hight = 9;
+        public float Hight = 9;
 
 
         public HpBarIndicator()
         {
-            dxLine = new Line(dxDevice) { Width = 9 };
+            DxLine = new Line(DxDevice) { Width = 9 };
 
             Drawing.OnPreReset += DrawingOnOnPreReset;
             Drawing.OnPostReset += DrawingOnOnPostReset;
@@ -35,55 +35,55 @@ namespace TAC_Jax
 
         private static void CurrentDomainOnDomainUnload(object sender, EventArgs eventArgs)
         {
-            dxLine.Dispose();
+            DxLine.Dispose();
         }
 
         private static void DrawingOnOnPostReset(EventArgs args)
         {
-            dxLine.OnResetDevice();
+            DxLine.OnResetDevice();
         }
 
         private static void DrawingOnOnPreReset(EventArgs args)
         {
-            dxLine.OnLostDevice();
+            DxLine.OnLostDevice();
         }
 
         private Vector2 Offset
         {
             get
             {
-                if (unit != null)
+                if (Unit != null)
                 {
-                    return unit.IsAlly ? new Vector2(34, 9) : new Vector2(10, 20);
+                    return Unit.IsAlly ? new Vector2(34, 9) : new Vector2(10, 20);
                 }
 
                 return new Vector2();
             }
         }
 
-        public Vector2 startPosition
+        public Vector2 StartPosition
         {
 
-            get { return new Vector2(unit.HPBarPosition.X + Offset.X, unit.HPBarPosition.Y + Offset.Y); }
+            get { return new Vector2(Unit.HPBarPosition.X + Offset.X, Unit.HPBarPosition.Y + Offset.Y); }
         }
 
 
-        private float getHpProc(float dmg = 0)
+        private float GetHpProc(float dmg = 0)
         {
-            float health = ((unit.Health - dmg) > 0) ? (unit.Health - dmg) : 0;
-            return (health / unit.MaxHealth);
+            float health = ((Unit.Health - dmg) > 0) ? (Unit.Health - dmg) : 0;
+            return (health / Unit.MaxHealth);
         }
 
-        private Vector2 getHpPosAfterDmg(float dmg)
+        private Vector2 GetHpPosAfterDmg(float dmg)
         {
-            float w = getHpProc(dmg) * width;
-            return new Vector2(startPosition.X + w, startPosition.Y);
+            float w = GetHpProc(dmg) * Width;
+            return new Vector2(StartPosition.X + w, StartPosition.Y);
         }
 
-        public void drawDmg(float dmg, System.Drawing.Color color)
+        public void DrawDmg(float dmg, System.Drawing.Color color)
         {
-            var hpPosNow = getHpPosAfterDmg(0);
-            var hpPosAfter = getHpPosAfterDmg(dmg);
+            var hpPosNow = GetHpPosAfterDmg(0);
+            var hpPosAfter = GetHpPosAfterDmg(dmg);
 
             fillHPBar(hpPosNow, hpPosAfter, color);
             //fillHPBar((int)(hpPosNow.X - startPosition.X), (int)(hpPosAfter.X- startPosition.X), color);
@@ -91,7 +91,7 @@ namespace TAC_Jax
 
         private void fillHPBar(int to, int from, System.Drawing.Color color)
         {
-            Vector2 sPos = startPosition;
+            Vector2 sPos = StartPosition;
 
             for (int i = from; i < to; i++)
             {
@@ -101,9 +101,9 @@ namespace TAC_Jax
 
         private void fillHPBar(Vector2 from, Vector2 to, System.Drawing.Color color)
         {
-            dxLine.Begin();
+            DxLine.Begin();
 
-            dxLine.Draw(new[]
+            DxLine.Draw(new[]
                                     {
                                         new Vector2((int)from.X, (int)from.Y + 4f),
                                         new Vector2( (int)to.X, (int)to.Y + 4f)
@@ -111,7 +111,7 @@ namespace TAC_Jax
             // Vector2 sPos = startPosition;
             //Drawing.DrawLine((int)from.X, (int)from.Y + 9f, (int)to.X, (int)to.Y + 9f, 9f, color);
 
-            dxLine.End();
+            DxLine.End();
         }
 
     }

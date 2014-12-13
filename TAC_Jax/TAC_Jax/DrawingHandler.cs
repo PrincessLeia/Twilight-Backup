@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LeagueSharp;
 using LeagueSharp.Common;
 using Color = System.Drawing.Color;
@@ -11,10 +8,10 @@ namespace TAC_Jax
 {
     class DrawingHandler
     {
-        internal static HpBarIndicator hpi = new HpBarIndicator();
-        internal static void load(EventArgs args)
+        internal static HpBarIndicator Hpi = new HpBarIndicator();
+        internal static void Load(EventArgs args)
         {
-            loadSpells();
+            LoadSpells();
             if (MenuHandler.Config.Item("drawWard").GetValue<bool>())
                 Utility.DrawCircle(Game.CursorPos, 250, Color.Purple, 8, 30);
             if (MenuHandler.Config.Item("drawHp").GetValue<bool>())
@@ -24,12 +21,13 @@ namespace TAC_Jax
                 ObjectManager.Get<Obj_AI_Hero>()
                 .Where(ene => !ene.IsDead && ene.IsEnemy && ene.IsVisible))
                 {
-                    hpi.unit = enemy;
-                    hpi.drawDmg((float)GameHandler.comboDamage(enemy), Color.Yellow);
+                    Hpi.Unit = enemy;
+                    var damage = (float)GameHandler.ComboDamage(enemy);
+                    Hpi.DrawDmg(damage, damage > enemy.Health ? Color.Red : Color.Yellow);
                 }
             }
         }
-        internal static void loadSpells()
+        internal static void LoadSpells()
         {
             Spell[] spellList = { SkillHandler.Q, SkillHandler.E };
 
@@ -52,8 +50,9 @@ namespace TAC_Jax
                 ObjectManager.Get<Obj_AI_Hero>()
                 .Where(ene => !ene.IsDead && ene.IsEnemy && ene.IsVisible))
                 {
-                    hpi.unit = enemy;
-                    hpi.drawDmg((float)GameHandler.comboDamage(enemy), Color.Yellow);
+                    Hpi.Unit = enemy;
+                    var damage = (float)GameHandler.ComboDamage(enemy);
+                    Hpi.DrawDmg(damage, damage > enemy.Health ? Color.Red : Color.Yellow);
                 }
             }
         }

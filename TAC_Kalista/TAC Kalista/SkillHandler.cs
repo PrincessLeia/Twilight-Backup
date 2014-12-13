@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LeagueSharp;
+﻿using LeagueSharp;
 using LeagueSharp.Common;
-using Color = System.Drawing.Color;
-using SharpDX;
 namespace TAC_Kalista
 {
     class SkillHandler
     {
         public static Spell Q, W, E, R;
-        public static Spell[] spellList = { Q, W, E, R };
-        public static void init()
+        public static Spell[] SpellList = { Q, W, E, R };
+        internal static double[] BaseRendDamage = { 20, 30, 40, 50, 60};
+        internal static double[] RendDamageBonusPerSpear = { 10, 14, 19, 25, 32};
+        internal static double[] RendDamageBonusPerSpearMultiplier = { 0.2, 0.225, 0.25, 0.275, 0.3 };
+        internal static double AttackDamage = ObjectManager.Player.BaseAttackDamage + ObjectManager.Player.FlatPhysicalDamageMod;
+        public static void Init()
         {
             Q = new Spell(SpellSlot.Q, 1450);
             W = new Spell(SpellSlot.W, 5500);

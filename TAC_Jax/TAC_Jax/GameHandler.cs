@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LeagueSharp;
 using LeagueSharp.Common;
 using SharpDX;
@@ -17,54 +14,53 @@ namespace TAC_Jax
          * over-spam EventHandler with this stuff.
          * */
         internal static Orbwalking.Orbwalker Orbwalker;
-        internal static Vector3 lastWardPos;
+        internal static Vector3 LastWardPos;
 
-        internal static bool isCastingQ = false;
-        internal static bool hasResetBuffCount = false;
-        internal static bool isCastingE = false;
-        internal static bool canCastE = false;
+        internal static bool HasResetBuffCount = false;
 
-        internal static int buffCount = 0;
-        internal static int buffCountBeforeQ = 0;
-        internal static int lastTick = 0;
-        internal static int lastTickE = 0;
-        internal static int lastPlaced;
+        internal static int BuffCount = 0;
+        internal static int LastTick = 0;
+        internal static int LastPlaced;
+        
 
-        internal static void updateCount()
+        internal static bool IsCastingE
+        {
+            get { return ObjectManager.Player.HasBuff("JaxCounterStrike"); }
+        }
+
+        internal static bool HasSheenActive
+        {
+            get { return ObjectManager.Player.HasBuff("Sheen"); }
+        }
+        internal static void UpdateCount()
         {
             /* Check if I have my passive and it didnt expire
              * Only expire the passive when I don't auto attack in 2.5 seconds
              */
-            if (hasResetBuffCount == false && Environment.TickCount - lastTick >= 2500)
+            if (HasResetBuffCount == false && Environment.TickCount - LastTick >= 2500)
             {
-                if (Jax.debug)
+                if (Jax.Debug)
                     Game.PrintChat("Resetting buff counter to 0");
-                lastTick = 0;
-                buffCount = 0;
-                buffCountBeforeQ = 0;
-                hasResetBuffCount = true;
-            }
-            /* Skill E time shit */
-            // TODO:
-            // double check this shit, i think its not working properaly
-            if (isCastingE && !canCastE && lastTickE > 0 && Environment.TickCount - lastTickE >= 1500)
-            {
-                lastTickE = 0;
-                canCastE = true;
-                if (Jax.debug)
-                    Game.PrintChat("Jax can cast E, resetting counter to 0");
-            }
-            if (lastTickE > 0 && Environment.TickCount - lastTickE >= 2000)
-            {
-                lastTick = 0;
-                canCastE = false;
-                isCastingE = false;
-                if (Jax.debug)
-                    Game.PrintChat("Resetting jax counter strike counter to 0");
+                LastTick = 0;
+                BuffCount = 0;
+                HasResetBuffCount = true;
             }
         }
+        internal static double GetSheenDamage(Obj_AI_Base target,bool simulate = false)
+        {
+            if (simulate)
+                return Items.HasItem(3057)
+                    ? ObjectManager.Player.BaseAttackDamage
+                    : (Items.HasItem(3078) ? ObjectManager.Player.BaseAttackDamage*2 : 0);
+            else if (Items.HasItem(3057) && ObjectManager.Player.HasBuff("Sheen")) // sheen
+                return ObjectManager.Player.BaseAttackDamage;
+            else if (Items.HasItem(3078) && ObjectManager.Player.HasBuff("Sheen")) // trinity
+                return ObjectManager.Player.BaseAttackDamage * 2;
+            else
+                return 0;
+        }
 
-        internal static double comboDamage(Obj_AI_Hero target)
+        internal static double ComboDamage(Obj_AI_Hero target)
         {
             /**
              * TODO:
@@ -85,18 +81,26 @@ namespace TAC_Jax
                 // Check if W is ready
                 if (SkillHandler.W.IsReady()) damage += ObjectManager.Player.GetSpellDamage(target, SpellSlot.W);
                 // Check if R 3rd stack is ready
-                if (buffCount > 0 && buffCount % 3 == 0) damage += ObjectManager.Player.GetSpellDamage(target, SpellSlot.R);
+                if (BuffCount > 0 && BuffCount % 3 == 0) damage += ObjectManager.Player.GetSpellDamage(target, SpellSlot.R);
                 // Check ignite damage
                 if (SkillHandler.Ignite.IsReady()) damage += SkillHandler.Ignite.GetDamage(target);
+                // Check BotRK damage
+                if (Items.HasItem(3153) && Items.CanUseItem(3153)) damage += ObjectManager.Player.GetItemDamage(target, Damage.DamageItems.Botrk);
+                // Check sheen/trinity damage
+                damage += GetSheenDamage(target);
             }
             return damage;
         }
     }
-    class spellData
+    class GameSpellHandler
     {
+        /**
+         * @author h3h3
+         * Thanks for the list bro!
+         * */
         internal static String[] HaveHitEffect = new[]
         {
-                "KhazixPAttack", "EliseSpiderBasicAttack3", "EliseSpiderBasicAttack2", "EliseRDummy", "EliseSpiderEBuff",
+                "KhazixPAttack", "EliseSpiderBasicAttack3", "EliseSpiderBasicAttack2", "EliseSpiderEBuff",
                 "EliseSpiderBasicAttack", "EliseSpiderCritAttack", "EliseSpiderQ", "ZedShadowBasicAttack", "ZedWHandler",
                 "ZedRHandler", "Nidalee_CougarBasicAttack", "NidaleeCritAttack", "NidaleeBasicAttack",
                 "NidaleeBasicAttack2", "Nidalee_CougarBasicAttack2", "Nidalee_CougarCritAttack", "ThreshBasicAttack",
@@ -115,11 +119,11 @@ namespace TAC_Jax
                 "UdyrPhoenixBreath", "UdyrBearAttack", "UdyrSpiritBearAttack", "UdyrTigerAttack",
                 "GangplankBasicAttack2", "UdyrTurtleStance", "UdyrBasicAttack", "UdyrTigerStance", "UdyrTurtleAttack",
                 "GangplankBasicAttack", "OlafBasicAttack", "LucianPassiveAttack", "JayceRangedAttack2",
-                "MasterYiCritAttack", "EliseR", "JayceBasicAttack", "LucianBasicAttack2", "OlafCritAttack",
+                "MasterYiCritAttack", "JayceBasicAttack", "LucianBasicAttack2", "OlafCritAttack",
                 "JayceRangedAttack", "JayceBasicAttack2", "JayceCritAttack", "JannaBasicAttack2", "JannaCritAttack",
                 "EliseRSpider", "LucianBasicAttack", "OlafBasicAttack2", "ViRDunk", "MasterYiBasicAttack",
                 "JayceRangedCritAttack", "JannaBasicAttack", "MasterYiBasicAttack2", "UrgotEntropyPassive",
-                "QuinnValorQ", "UrgotHeatseekingHomeMissile", "OlafCritAttack2", "GarenQ", "GarenW", "ThreshCritAttack",
+                "QuinnValorQ", "UrgotHeatseekingHomeMissile", "OlafCritAttack2", "GarenQ", "ThreshCritAttack",
                 "LucianCritAttack", "JinxBasicAttack", "JinxCritAttack4", "JinxCritAttack5", "JinxCritAttack2",
                 "JinxCritAttack3", "JinxCritAttack6", "ThreshBasicAttack1S", "ThreshBasicAttack2L",
                 "ThreshBasicAttack2M", "ThreshBasicAttack2S", "ThreshBasicAttack1L", "ThreshBasicAttack1M",
@@ -167,7 +171,7 @@ namespace TAC_Jax
                 "AatroxCritAttack", "AatroxWONHAttackLife", "AatroxEConeMissile", "SonaBasicAttack", "SonaBasicAttack2",
                 "SonaQProc", "SonaWAttack", "SonaQAttack", "SonaEAttack", "SonaEPCDeathRecapFix", "SonaQMissile",
                 "SonaWPCDeathRecapFix", "SonaQPCDeathRecapFix", "Parley", "MissFortuneCritAttack",
-                "MissFortuneBasicAttack", "SivirWAttack", "SivirWAttackBounce", "SonaE", "SonaR",
+                "MissFortuneBasicAttack", "SivirWAttack", "SivirWAttackBounce",
                 "MissFortuneBasicAttack2", "GnarBigAttackTower", "GnarCritAttack", "GnarBasicAttack",
                 "GnarBigCritAttack2", "GnarCritAttack2", "GnarBigBasicAttack", "GnarBasicAttack2", "GnarBigCritAttack",
                 "GnarBigBasicAttack2", "SRU_KrugMiniBasicAttack5", "SRU_KrugMiniBasicAttack4",
@@ -207,13 +211,13 @@ namespace TAC_Jax
                 "BaronBasicAttack", "BaronDeathBreath", "VeigarBasicAttack2", "SRUAP_Turret_Order1BasicAttack",
                 "SRUAP_Turret_Chaos2BasicAttack", "SRUAP_Turret_Chaos3BasicAttack", "SRU_BaronBasicAttack",
                 "ViktorPowerTransferReturn", "BaronSpike", "XerathCritAttack", "SRUAP_Turret_Order3_TestBasicAttack",
-                "KhazixW", "KogMawBioArcaneBarrageAttack", "maokaicritattack", "maokaibasicattack2", "SonaW",
+                "KhazixW", "KogMawBioArcaneBarrageAttack", "maokaicritattack", "maokaibasicattack2",
                 "SRUAP_Turret_Chaos3_TestBasicAttack", "TwitchCritAttack", "KhazixWLong", "maokaibasicattack",
                 "KalistaCritAttack", "SRUAP_Turret_Order4BasicAttack", "KalistaBasicAttack", "KalistaBasicAttackPow",
                 "SRUAP_Turret_Chaos4BasicAttack", "KalistaBasicAttackNone", "KalistaBasicAttackSlow",
                 "SRU_SpiritwolfBasicAttack2", "SRU_SpiritwolfBasicAttack", "SonaQ"
         };
-        internal static bool canDodge(String spellName)
+        internal static bool CanDodge(String spellName)
         {
             return HaveHitEffect.Contains(spellName);
         }

@@ -20,7 +20,7 @@ namespace TAC_Kalista
     {
         public static double ActivatorTime;
         public static List<BuffList> BuffList = new List<BuffList>();
-        public static void init()
+        public static void Init()
         {
             BuffList.Add(new BuffList { ChampionName = "Darius", DisplayName = "Darius (W)", BuffName = "DariusNoxianTacticsONH", DefaultValue = true, Delay = 0 });
             BuffList.Add(new BuffList { ChampionName = "Diana", DisplayName = "Diana (Q)", BuffName = "DianaArc", DefaultValue = true, Delay = 0 });
@@ -40,7 +40,7 @@ namespace TAC_Kalista
             BuffList.Add(new BuffList { ChampionName = "Zed", DisplayName = "Zed (R)", BuffName = "zedulttargetmark", DefaultValue = true, Delay = 3 });
         }
 
-        public static void useItem()
+        public static void UseItem()
         {
             Obj_AI_Hero target = SimpleTs.GetTarget(Orbwalking.GetRealAutoAttackRange(ObjectManager.Player), SimpleTs.DamageType.Physical);
             if (MenuHandler.Config.Item("BOTRK").GetValue<bool>())
@@ -90,12 +90,12 @@ namespace TAC_Kalista
         }
         public static void CheckChampionBuff()
         {
-            var QuickSilverMenu = MenuHandler.Config.SubMenu("Items").SubMenu("QuickSilverSash");
+            var quickSilverMenu = MenuHandler.Config.SubMenu("Items").SubMenu("QuickSilverSash");
             foreach (var t1 in ObjectManager.Player.Buffs)
             {
-                foreach (var t in QuickSilverMenu.Items)
+                foreach (var t in quickSilverMenu.Items)
                 {
-                    if (QuickSilverMenu.Item(t.Name).GetValue<bool>())
+                    if (quickSilverMenu.Item(t.Name).GetValue<bool>())
                     {
                         if (t1.Name.ToLower().Contains(t.Name.ToLower()))
                         {
@@ -120,19 +120,19 @@ namespace TAC_Kalista
                             }
                         }
                     }
-                    if (QuickSilverMenu.Item("AnySnare").GetValue<bool>() &&
+                    if (quickSilverMenu.Item("AnySnare").GetValue<bool>() &&
                     ObjectManager.Player.HasBuffOfType(BuffType.Snare))
                     {
                         if (Items.HasItem(3139)) Items.UseItem(3139);
                         if (Items.HasItem(3140)) Items.UseItem(3140);
                     }
-                    if (QuickSilverMenu.Item("AnyStun").GetValue<bool>() &&
+                    if (quickSilverMenu.Item("AnyStun").GetValue<bool>() &&
                     ObjectManager.Player.HasBuffOfType(BuffType.Stun))
                     {
                         if (Items.HasItem(3139)) Items.UseItem(3139);
                         if (Items.HasItem(3140)) Items.UseItem(3140);
                     }
-                    if (QuickSilverMenu.Item("AnyTaunt").GetValue<bool>() &&
+                    if (quickSilverMenu.Item("AnyTaunt").GetValue<bool>() &&
                     ObjectManager.Player.HasBuffOfType(BuffType.Taunt))
                     {
                         if (Items.HasItem(3139)) Items.UseItem(3139);

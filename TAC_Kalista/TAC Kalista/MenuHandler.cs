@@ -12,8 +12,8 @@ namespace TAC_Kalista
     class MenuHandler
     {
         public static Menu Config;
-        internal static Orbwalking.Orbwalker orb;
-        public static void init()
+        internal static Orbwalking.Orbwalker Orb;
+        public static void Init()
         {
             Config = new Menu("Twilight Kalista Rework", "Kalista", true);
 
@@ -22,7 +22,7 @@ namespace TAC_Kalista
             Config.AddSubMenu(targetselectormenu);
 
             Menu orbwalker = new Menu("Orbwalker", "orbwalker");
-            orb = new Orbwalking.Orbwalker(orbwalker);
+            Orb = new Orbwalking.Orbwalker(orbwalker);
             Config.AddSubMenu(orbwalker);
 
             Config.AddSubMenu(new Menu("AutoCarry options", "ac"));
@@ -38,6 +38,7 @@ namespace TAC_Kalista
             Config.SubMenu("ac").SubMenu("skillConfiguration").AddItem(new MenuItem("UseEACSlowT", "Slow target if enemy <=").SetValue(new Slider(1, 1, 5)));
             Config.SubMenu("ac").SubMenu("skillConfiguration").AddItem(new MenuItem("minE", "Use E at X stacks").SetValue(new Slider(1, 1, 20)));
             Config.SubMenu("ac").SubMenu("skillConfiguration").AddItem(new MenuItem("minEE", "Enable E at X stacks").SetValue(false));
+            Config.SubMenu("ac").SubMenu("skillConfiguration").AddItem(new MenuItem("stickToTarget", "Stick to target with minions").SetValue(true));
             
             Config.SubMenu("ac").AddSubMenu(new Menu("Item settings","itemsAC"));
             Config.SubMenu("ac").SubMenu("itemsAC").AddItem(new MenuItem("useItems", "Use Items").SetValue(new KeyBind("G".ToCharArray()[0], KeyBindType.Toggle)));
